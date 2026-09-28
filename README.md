@@ -223,7 +223,7 @@ Effective Routes
 NSG Rules
         |
         v
-Firewall / NVA
+(Firewall / NVA)
         |
         v
 Destination Reachability
