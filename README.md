@@ -9,7 +9,7 @@ toward designing and automating enterprise cloud environments.
 
 ## Projects
 
-### 01 — Enterprise Azure Networking
+### 01. Enterprise Azure Networking
 
 Designed and deployed a segmented hub-and-spoke Azure network
 with separate Production and Development environments.
@@ -24,7 +24,7 @@ administration, routing, DNS, and troubleshooting.
 
 ---
 
-### 02 — Infrastructure as Code with Terraform
+### 02. Infrastructure as Code with Terraform
 
 Rebuilding the Azure networking environment using Terraform,
 reusable modules, remote state, and configuration management.
@@ -33,7 +33,7 @@ reusable modules, remote state, and configuration management.
 
 ---
 
-### 03 — Azure Identity & Zero Trust
+### 03. Azure Identity & Zero Trust
 
 Enterprise identity architecture using Microsoft Entra ID,
 RBAC, Conditional Access, PIM, and managed identities.
