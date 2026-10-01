@@ -9,8 +9,8 @@ The environment simulates an enterprise Azure deployment with separate Productio
 The project was designed to go beyond basic resource deployment by focusing on the reasoning behind the architecture, traffic flows, security controls, and systematic troubleshooting.
 
 ## Architecture
-
-![Azure Hub-and-Spoke Architecture](architecture/network-architecture.png)
+Detailed network diagram is available in the
+[Azure Hub-and-Spoke Architecture](architecture/network-architecture.png).
 
 The environment consists of three Azure Virtual Networks:
 
@@ -61,27 +61,3 @@ The Hub provides a centralized location for shared connectivity and management s
 - `nslookup`
 - `ip`
 - `ss`
-
-## Network Design
-
-The network uses a hub-and-spoke model:
-
-```text
-                   Administrator
-                         |
-                         v
-                  Azure Bastion
-                         |
-                 +-------+-------+
-                 |    HUB VNET   |
-                 | 10.10.0.0/16  |
-                 +-------+-------+
-                         |
-                  VNet Peering
-                  /           \
-                 /             \
-                v               v
-      +----------------+   +----------------+
-      |   PROD VNET    |   |    DEV VNET    |
-      | 10.20.0.0/16   |   | 10.30.0.0/16   |
-      +----------------+   +----------------+
