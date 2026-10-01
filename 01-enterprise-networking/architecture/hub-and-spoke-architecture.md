@@ -1,5 +1,7 @@
 # Architecture
 
+<img width="789" height="981" alt="network-architecture" src="https://github.com/user-attachments/assets/2a5d7e82-2165-4acc-90a1-a13576661117" />
+
 The hub-and-spoke architecture provides centralized connectivity while maintaining logical separation between workloads.
 Azure VNet peering is non-transitive. Therefore:
 ```
