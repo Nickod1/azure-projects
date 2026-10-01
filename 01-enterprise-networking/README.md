@@ -1,7 +1,3 @@
-## Architecture
-
-![Azure Hub-and-Spoke Architecture](architecture/network-architecture.png)
-
 ## **Overview**
 
 This project is part of my hands-on Azure Cloud Engineering learning path. The objective was to design, deploy, secure, and troubleshoot a segmented Azure network using a hub-and-spoke architecture.
@@ -28,7 +24,8 @@ The main objectives of this project were to:
 
 The environment consists of three Azure Virtual Networks:
 
-<img width="789" height="981" alt="AzureProject1 drawio" src="https://github.com/user-attachments/assets/6ccf7552-55e0-49b4-8e50-22dde01bb552" />
+Detailed addressing information is available in the
+[Architecture Diagram](archtecture/network-architecture.png)
 
 Production and Development are connected to the hub through VNet peering.
 
