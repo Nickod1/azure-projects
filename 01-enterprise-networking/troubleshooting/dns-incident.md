@@ -1,42 +1,33 @@
-# NSG Connectivity Incident
+# <Incident Name>
 
 ## Symptom
 
-The Production web VM could no longer connect to the application
-server on TCP/8080.
+What stopped working?
 
-## Initial Hypothesis
+## Expected Behaviour
 
-Possible causes included:
+What should have happened?
 
-- DNS
-- Routing
-- NSG configuration
-- Application availability
+## Initial Hypotheses
+
+What components could realistically cause the symptom?
 
 ## Investigation
 
-DNS resolution was validated first.
-
-Connectivity to the destination IP was then tested.
-
-Effective routes were inspected.
-
-Azure Network Watcher IP Flow Verify showed that TCP/8080
-was being denied.
+Document the tests performed and why.
 
 ## Root Cause
 
-An NSG rule prevented traffic from the Web subnet to the
-Application subnet on TCP/8080.
+State the actual cause.
 
 ## Resolution
 
-The NSG rule was corrected to permit the required traffic.
+Explain exactly what was corrected.
 
 ## Validation
 
-Connectivity was retested:
+Show how you confirmed that the issue was resolved.
 
-```bash
-curl http://app01.internal.dedocoton.local:8080
+## Lesson Learned
+
+Explain what the incident taught you about Azure troubleshooting.
