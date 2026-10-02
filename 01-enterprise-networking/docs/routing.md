@@ -1,40 +1,41 @@
-## **Hub-and-Spoke Networking**
+# Azure Routing Design
 
-The Hub VNet acts as the central connectivity point for the environment.
+## Default Routing
 
-The Production and Development VNets operate as spokes.
-```
-Production
-    |
-    |
-   Hub
-    |
-    |
-Development
-```
-<img width="641" height="616" alt="image" src="https://github.com/user-attachments/assets/5ee2c9a1-be68-43c1-a806-35ebc5553305" />
+Azure automatically creates system routes for each subnet.
 
-VNet peering was configured between:
-```
-Hub <--> Production
-Hub <--> Development
-```
-<img width="1100" height="408" alt="image" src="https://github.com/user-attachments/assets/7e3e9967-9f63-4440-a1ee-41d91cd4474e" />
+The lab examined how these routes provide connectivity to:
 
-There is no direct Production-to-Development peering.
+- Other addresses within the VNet
+- Peered VNets
+- Azure services
+- External destinations
 
-One important concept demonstrated during the lab was that Azure VNet peering is non-transitive.
+## VNet Peering
 
-For example:
-```
-Production --> Hub
-```
-and:
-```
-Hub --> Development
-```
-does not automatically provide:
-```
-Production --> Hub --> Development
-```
-Additional routing and a network virtual appliance or Azure Firewall would be required if traffic needed to transit the hub.
+Hub ↔ Production
+
+Hub ↔ Development
+
+Production and Development are not directly peered.
+
+VNet peering is non-transitive.
+
+## User Defined Routes
+
+A route table was introduced to demonstrate how UDRs can
+influence Azure traffic paths.
+
+A future centralized security architecture could use:
+
+0.0.0.0/0
+        ↓
+Virtual Appliance
+        ↓
+Azure Firewall
+
+## Troubleshooting
+
+Effective Routes were used to identify the routes Azure actually applied to network interfaces.
+
+This was particularly useful during the intentionally introduced routing failure.
