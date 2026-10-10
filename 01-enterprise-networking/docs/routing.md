@@ -27,13 +27,13 @@ A route table was introduced to demonstrate how UDRs can
 influence Azure traffic paths.
 
 A future centralized security architecture could use:
-
+```
 0.0.0.0/0
         ↓
 Virtual Appliance
         ↓
 Azure Firewall
-
+```
 ## Troubleshooting
 
 Effective Routes were used to identify the routes Azure actually applied to network interfaces.
